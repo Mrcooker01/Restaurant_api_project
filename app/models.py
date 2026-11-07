@@ -32,7 +32,7 @@ class MenuItem(db.Model):
             "name": self.name,
             "price": self.price
         }
-class order(db.Model):
+class Order(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     quantity = db.Column(db.Integer, nullable = False)
     status = db.Column(db.String(20), default = 'pending', nullable = False)
@@ -48,6 +48,6 @@ class order(db.Model):
             "item_id": self.item_id,
             "quantity": self.quantity,
             "status": self.status,
-            "order_date": self.oredr_date.isformat() if self.oredr_date else None
+            "order_date": self.oredr_date.isoformat() if self.oredr_date else None
         }
     
